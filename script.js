@@ -5,10 +5,10 @@ const dropdown = document.getElementById("categories");
 const id = document.getElementById("images");
 
 fetch("data.json")
-  .then(function(response) {
+  .then((response) => {
     return response.json();
   })
-  .then(function(tseison) {
+  .then((tseison) => {
     showCards(tseison, "All");
     showDropdown(categories);
 });
@@ -94,10 +94,10 @@ let showDropdown = () => {
     dropdownlink.innerHTML = categories[i];
     dropdownlink.addEventListener("click", event => {
       fetch("data.json")
-        .then(function(response) {
+        .then((response) => {
           return response.json();
         })
-        .then(function(tseison) {
+        .then((tseison) => {
           while (images.firstChild) {
             images.removeChild(images.firstChild);
           }
